@@ -1,55 +1,26 @@
 import React from 'react'
-import '../App.css'
-import { setTask } from './firebase'
+import '../hojas-de-estilo/Principal.css'
 
-const Principal = () => {
+const Principal = (props) => {
 
-  let inicial = {
-
-  }
-
-  function handleChange(e) {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
-    //name === 'title' ? inicial.title = value : inicial.description = value;
-    inicial = {
-      ...inicial,
-      [name]: value,
-    }
-
-  }
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(inicial);
-    setTask(inicial);
-  }
 
   return (
-    <div className='App'>
+    
       <div className='contenedor-testimonio'>
-        <img src={require('../imagenes/mat1.jpg')} alt='foto' />
+        <img
+          className='imagen-testimonio'
+          src={require(`../imagenes/mat${props.imagen}.jpg`)}
+          alt='foto'
+        />
         <div className='contenedor-texto-testimonio'>
-          <p className='nombre-testimonio'>Elias</p>
-          <p className='cargo-testimonio'>Ingeniero</p>
-          <p className='texto-testimonio'>lorem impsum</p>
+          <p className='nombre-testimonio'>
+            <strong>{props.nombre}</strong> en {props.pais}
+          </p>
+          <p className='cargo-testimonio'>{props.cargo}</p>
+          <p className='texto-testimonio'>"{props.testimonio}"</p>
         </div>
       </div>
 
-
-
-
-      <form onSubmit={handleSubmit}>
-        <label>titulo</label>
-        <input type='text' name='title' onChange={handleChange} />
-        <label>description:
-          <textarea name='description' onChange={handleChange} />
-        </label>
-
-        <input type='submit' value='enviar' />
-      </form>
-
-    </div>
   )
 }
 

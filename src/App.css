@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, 
@@ -25,6 +26,22 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 15px;
+  font-family: Lato, sans-serif;
+}
+
+.logo-contenedor{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+} 
+
+.logo{
+  width: 350px;
+	height: 250px;
+
 }
 
 .contenedor-principal {
@@ -33,4 +50,5 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }

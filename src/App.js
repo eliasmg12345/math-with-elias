@@ -45,7 +45,7 @@ function App() {
           className='boton-clic'
           onClick={calculadora}
         >
-          Calculadora
+          Calculadora basica
         </button>
         {mostrarCalculadora && <Calculadora />}
 

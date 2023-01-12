@@ -6,10 +6,12 @@ import './App.css';
 
 import logo from './imagenes/logo.png';
 import Contador from './componentes/Contador';
+import Calculadora from './componentes/calculadora/Calculadora';
 
 function App() {
 
   const [numClics, setNumClics] = useState(0);
+  const [mostrarCalculadora, setMostrarCalculadora] = useState(false);
 
   const manejarClic = () => {
     setNumClics(numClics + 1);
@@ -18,6 +20,11 @@ function App() {
   const reiniciarContador = () => {
     setNumClics(0);
   }
+
+  const calculadora = () => {
+    setMostrarCalculadora(!mostrarCalculadora)
+  }
+
 
   return (
     <div className="App">
@@ -29,7 +36,21 @@ function App() {
         />
       </div>
 
+
+
+
       <div className='contenedor-principal'>
+
+        <button
+          className='boton-clic'
+          onClick={calculadora}
+        >
+          Calculadora
+        </button>
+        {mostrarCalculadora && <Calculadora />}
+
+
+
         <h1>Bienvenidos a Matematicas con Elias</h1>
         <hr />
 
@@ -72,8 +93,8 @@ function App() {
           testimonio='Quisque euismod dolor id est posuere lacinia. Aenean pulvinar nulla ac metus euismod porta. Fusce nisi mauris, condimentum sit amet commodo in, sollicitudin eu ligula. Morbi ex magna, semper vitae elit tempor, hendrerit laoreet mi. Morbi lorem velit, hendrerit in dignissim eget, ornare vel risus'
         />
 
-        <Formulario />
       </div>
+      <Formulario />
     </div>
   );
 }

@@ -4,9 +4,9 @@ const Boton = ({texto, esBotonClic, manejarClic}) => {
 
   return (
 
-    <div>
+    <div className=''>
         <button
-            className={esBotonClic ? 'boton-clic' : 'boton-reiniciar'}
+            className={ esBotonClic ? 'boton-clic' : 'boton-reiniciar'}
             onClick={manejarClic}
         >
             {texto}
